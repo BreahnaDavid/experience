@@ -1,0 +1,6 @@
+= nav_bar brand: 'Experience', brand_link: root_path do
+  = menu_group do
+    = menu_item 'Home', root_path
+    = menu_item 'About', page_path('about')
+  = menu_group pull: :right do
+    = menu_item 'Sign Up', root_path
