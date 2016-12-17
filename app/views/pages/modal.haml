@@ -1,0 +1,10 @@
+.row
+  .col-md-12.text-center
+    = content_tag :a, "Modal button",
+      href: "#modal",
+      class: 'btn btn-primary btn-outline',
+      data: { toggle: 'modal' }
+    = modal_dialog id: "modal",
+     header: { show_close: true, dismiss: 'modal', title: 'Modal title' },
+     body:   { content: 'Modal Dialog with helpers' },
+     footer: { content: content_tag(:button, 'Save', class: 'btn') }
