@@ -44,6 +44,38 @@ describe Teacher do
     end
   end
 
+  describe '#royal_students' do
+    let(:student) do
+      Royal::Student.new(full_name: 'Alexander Nevsky')
+    end
+
+    let(:teacher) do
+      described_class.new(
+        full_name: 'Werner Heisenberg',
+        royal_students: [student]
+      )
+    end
+
+    before(:each) do
+      student.save
+      teacher.save
+    end
+
+    it 'has a student' do
+      puts teacher
+      expect(teacher.royal_students.count).to eq 1
+      expect(teacher.royal_students.first).to eq student
+    end
+
+    it 'destroys a teacher with students' do
+      teacher.destroy
+
+      expect{ teacher.reload }.to raise_exception(
+        ActiveRecord::RecordNotFound
+      )
+    end
+  end
+
   it 'destroys a teacher without students' do
     teacher = described_class.create!(full_name: 'Werner Heisenberg')
 

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222211943) do
+ActiveRecord::Schema.define(version: 20170222224038) do
+
+  create_table "royal_students", force: :cascade do |t|
+    t.string   "full_name",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "royal_students_teachers", id: false, force: :cascade do |t|
+    t.integer "royal_student_id", null: false
+    t.integer "teacher_id",       null: false
+    t.index ["royal_student_id", "teacher_id"], name: "index_royal_students_teachers_on_student_id_and_teacher_id", unique: true
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "full_name",  null: false
