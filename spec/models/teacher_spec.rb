@@ -38,9 +38,7 @@ describe Teacher do
     it 'destroys a teacher with students' do
       teacher.destroy
 
-      expect{ teacher.reload }.to raise_exception(
-        ActiveRecord::RecordNotFound
-      )
+      expect(teacher.reload.deleted_at).not_to be_nil
     end
   end
 
@@ -70,17 +68,14 @@ describe Teacher do
     it 'destroys a teacher with students' do
       teacher.destroy
 
-      expect{ teacher.reload }.to raise_exception(
-        ActiveRecord::RecordNotFound
-      )
+      expect(teacher.reload.deleted_at).not_to be_nil
     end
   end
 
   it 'destroys a teacher without students' do
     teacher = described_class.create!(full_name: 'Werner Heisenberg')
+    teacher.destroy
 
-    expect{ teacher.destroy.reload }.to raise_exception(
-      ActiveRecord::RecordNotFound
-    )
+    expect(teacher.reload.deleted_at).not_to be_nil
   end
 end
