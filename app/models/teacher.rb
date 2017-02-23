@@ -1,4 +1,6 @@
 class Teacher < ActiveRecord::Base
+  acts_as_paranoid
+
   validates :full_name, presence: true
 
   has_and_belongs_to_many :students

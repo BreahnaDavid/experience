@@ -93,6 +93,8 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    paranoia (2.2.1)
+      activerecord (>= 4.0, < 5.1)
     permanent_records (4.1.7)
       activerecord (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -204,6 +206,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   listen (~> 3.0.5)
+  paranoia (~> 2.2)
   permanent_records
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)

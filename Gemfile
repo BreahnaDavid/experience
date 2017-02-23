@@ -35,6 +35,7 @@ gem 'high_voltage', '~> 3.0.0'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "paranoia", "~> 2.2"
 gem 'permanent_records'
 
 group :development, :test do
