@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 gem 'haml'
 gem 'high_voltage', '~> 3.0.0'
 gem "therubyracer"
